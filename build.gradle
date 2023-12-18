@@ -22,7 +22,7 @@ dependencies {
 publishing {
   repositories {
     maven {
-      url = "https://maven.pkg.github.com/Vignesh1799/test2"
+      url = "https://maven.pkg.github.com/Vignesh1799/package-test-2"
       credentials {
         username = System.getenv("GITHUB_ACTOR")
         password = System.getenv("GITHUB_TOKEN")
