@@ -20,22 +20,24 @@ repositories {
 dependencies {
 }
 
+task sourceJar(type: Jar) {
+    from sourceSets.main.allJava
+}
+
 publishing {
   repositories {
     maven {
-      url = "https://maven.pkg.github.com/Vignesh1799/package-test-2"
-      credentials {
-        username = System.getenv("GITHUB_ACTOR")
-        password = System.getenv("GITHUB_TOKEN")
-        println (username)
-        println (password)
-      }
+      url = "myMavenRepoWriteUrl=https://mymavenrepo.com/repo/29r3gjekiKpXMKiNnVqr/"
     }
   }
 
     publications {
         maven(MavenPublication) {
-		from components.java
+            from components.java
+
+        artifact sourceJar {
+            classifier "sources"
+            }
         }
     }
 }
